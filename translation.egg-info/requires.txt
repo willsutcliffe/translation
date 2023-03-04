@@ -1,0 +1,12 @@
+torch==1.13.1
+datasets
+torchvision
+torchaudio
+transformers
+pytorch-lightning
+scikit-learn
+matplotlib
+jupyter
+pandas
+sentencepiece
+sacremoses
