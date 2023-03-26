@@ -31,6 +31,7 @@ class EncoderBlock(nn.Module):
             nn.Dropout(dropout_prob),
         )
         self.dropout = nn.Dropout(p=dropout_prob)
+        
 
     def forward(self, x, pad_mask=None):
         """

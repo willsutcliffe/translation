@@ -71,6 +71,8 @@ class MultiHeadAttention(nn.Module):
                 "causal_mask",
                 cm.view(1, 1, max_len, max_len)
             )
+        # store attention weights
+        self.att_weights=None
 
     def forward(self, q, k, v, pad_mask=None):
         """
@@ -107,6 +109,7 @@ class MultiHeadAttention(nn.Module):
             attn_scores = attn_scores.masked_fill(
                 self.causal_mask[:, :, :T_out, :T_in] == 0, float('-inf'))
         attn_weights = F.softmax(attn_scores, dim=-1)
+        self.att_weights = attn_weights
 
         # (N, h, T, T) x (N, h, T, d_key) --> (N, h, T, d_key)
         A = attn_weights @ v
