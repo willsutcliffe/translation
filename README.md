@@ -61,5 +61,20 @@ Given that training times were fairly long 30-60 mins per epoch and aroun 20 epo
 
 ## Results
 
+Below one can see the train and validation loss curves for a english to french training 
+as well as the BLEU and BERT score as a function of epochs:
+<p float="left">
+  <img src="images/Loss_en_fr.png" width="600" />
+</p>
+<p float="left">
+  <img src="images/Perf_en_fr.png" width="600" />
+</p>
+
+Finally, below is an example of self attention weights computed in the encoder of the transformer for a particular
+sentence:
+<p float="left">
+  <img src="images/ru_attention.png" width="600" />
+</p>
+
 
 
